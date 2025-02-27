@@ -466,7 +466,8 @@ if __name__ == "__main__":
             param_space=search_space,
             run_config=air.RunConfig(
                 name=args.exp_name,
-                local_dir=args.root_exp_dir,
+#                local_dir=args.root_exp_dir,
+                storage_path=args.root_exp_dir,
                 progress_reporter=reporter
             )
         )
