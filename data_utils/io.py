@@ -1,6 +1,6 @@
 import json
 from monai.data import NibabelWriter
-from monai.transforms import AddChannel
+from monai.transforms import EnsureChannelFirst
 
 
 def save_json(data, file_path, sort_keys=True):
