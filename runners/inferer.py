@@ -36,7 +36,7 @@ def infer(model, data, model_inferer, device):
 
 def check_channel(inp):
     # check shape is 5
-    add_ch = AddChannel()
+    add_ch = EnsureChannelFirst()
     len_inp_shape = len(inp.shape)
     if len_inp_shape == 4:
         inp = add_ch(inp)
