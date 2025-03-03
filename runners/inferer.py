@@ -136,15 +136,15 @@ def run_infering(
     # post transform
     data = post_transform(data)
     
-    # eval infer origin
+   # eval infer origin
     if 'label' in data.keys():
         # get orginal label
-        lbl_dict = {'label': data['label_meta_dict']['filename_or_obj']}
+        lbl_dict = {'label': data['image'].meta['filename_or_obj']}
         label_loader = get_label_transform(args.data_name, keys=['label'])
         lbl_data = label_loader(lbl_dict)
         
         data['label'] = lbl_data['label']
-        data['label_meta_dict'] = lbl_data['label']
+        #data['label_meta_dict'] = lbl_data['label']
         
         ori_dc_vals, ori_hd95_vals = eval_label_pred(data, args.out_channels, args.device)
         print('infer test original:')
